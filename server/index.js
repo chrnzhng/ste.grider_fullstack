@@ -1,6 +1,7 @@
 const express = require('express'),
     mongoose = require('mongoose'),
-    keys = require('./config/keys');
+    keys = require('./config/keys'),
+    cookieSession = require('./cookie-session');
     require('./models/User');
     require('./services/passport');
 
@@ -8,6 +9,8 @@ const express = require('express'),
 mongoose.connect(keys.mongoURI);
 
 const app = express();
+
+
 
 require('./routes/authRoutes')(app);
 
